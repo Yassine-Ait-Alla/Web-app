@@ -6,7 +6,6 @@ import { compose } from 'recompose';
 import userpic from './userpic.png';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
-import MiniModal from './MiniMenuModal';
 import Mapp from './Map';
 
 
