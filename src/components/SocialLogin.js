@@ -11,23 +11,26 @@ class SocialLogin extends Component {
     signInFlow: "popup",
     signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
       firebase.auth.GithubAuthProvider.PROVIDER_ID,
       firebase.auth.EmailAuthProvider.PROVIDER_ID
     ],
     callbacks: {
-      signInSuccessWithAuthResult: () => false
+      signInSuccess: () => false
     }
   }
 
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ isSignedIn: !!user })
+      console.log("user", user)
     })
   }
 
   render() {
     return (
       <div className="App">
+        <h2>Or Sign In With Your Social Network</h2>
         {this.state.isSignedIn ? (
           <span>
             <div>Signed In!</div>

@@ -1,45 +1,58 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import * as routes from '../constants/routes';
+import { auth } from '../firebase';
+import withAuthorization from './withAuthorization';
 import { connect } from 'react-redux';
-
-import '../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css';
-import '../../node_modules/bootstrap/dist/css/bootstrap-grid.css';
-
+import { compose } from 'recompose';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
 
 const AccountNav = () =>
-<div>
+<div className="">
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
+  </button>
+
     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a className="navbar-brand" href="#">Hidden brand</a>
       <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+
         <li className="nav-item active">
-          <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+          <Link className="nav-link" to={'/home'}>Home <span className="sr-only">(current)</span></Link>
         </li>
+
         <li className="nav-item">
-          <a className="nav-link" href="#">Link</a>
+          <Link className="nav-link" to={'/'}>Landing<span className="sr-only">(current)</span></Link>
         </li>
+
         <li className="nav-item">
-          <a className="nav-link disabled" href="#">Disabled</a>
+          <Link className="nav-link" to={'/account'}>Account<span className="sr-only">(current)</span></Link>
         </li>
+
+
+
+
       </ul>
-      <form className="form-inline my-2 my-lg-0">
-        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
     </div>
+
   </nav>
 </div>
 
-const INITIAL_STATE = {
-  research: ''
-}
 
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value
 });
 
-export default AccountNav;
+
+const mapStateToProps = (state) => ({
+  authUser: state.sessionState.authUser
+});
+
+const authCondition = (authUser) => !!authUser;
+
+export default compose(
+  withAuthorization(authCondition),
+  connect(mapStateToProps)
+)(AccountNav);

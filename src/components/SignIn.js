@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { PasswordForgetLink } from './PasswordForget';
 import { SignUpLink } from './SignUp';
 import { auth } from '../firebase';
 import SocialLogin from './SocialLogin';
@@ -100,6 +101,7 @@ class SignInForm extends React.Component {
 
         </form>
         <SignUpLink />
+        <PasswordForgetLink />
 
         <br/>
         <hr/>
