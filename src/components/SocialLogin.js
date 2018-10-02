@@ -37,7 +37,7 @@ class SocialLogin extends Component {
             <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
             <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
             <img
-              alt="profile picture"
+              alt=""
               src={firebase.auth().currentUser.photoURL}
             />
           </span>

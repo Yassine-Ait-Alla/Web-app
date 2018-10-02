@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import * as routes from '../constants/routes';
-import { auth } from '../firebase';
-import { connect } from 'react-redux';
 import SignOutButton from './SignOut';
 import SearchBar from './SearchBar';
 import Cadran from './Clock';
@@ -48,12 +45,5 @@ const HomeNav = () =>
   </nav>
 </div>
 
-const INITIAL_STATE = {
-  research: ''
-}
-
-const byPropKey = (propertyName, value) => () => ({
-  [propertyName]: value
-});
 
 export default HomeNav;

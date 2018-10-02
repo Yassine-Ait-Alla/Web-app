@@ -10,7 +10,6 @@ import AccountPage from './Account';
 import * as routes from '../constants/routes';
 import { auth } from '../firebase';
 import withAuthentication from './withAuthentication';
-import firebase from 'firebase';
 import './App.css';
 
 

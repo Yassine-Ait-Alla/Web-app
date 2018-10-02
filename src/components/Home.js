@@ -7,12 +7,10 @@ import './App.css';
 import './style.css';
 import { Link } from 'react-router-dom';
 import PieChart from 'react-svg-piechart';
-import Cadran from './Clock';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
-const Chart = ({ users }) =>
-<div></div>
+
 
 class HomePage extends Component {
   componentDidMount() {

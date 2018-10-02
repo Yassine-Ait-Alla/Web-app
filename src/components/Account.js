@@ -1,5 +1,4 @@
 import React from 'react';
-import AccountNav from './AccountNav';
 import withAuthorization from './withAuthorization';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
@@ -12,7 +11,7 @@ import Mapp from './Map';
 const AccountPage = ({ authUser }) =>
   <div>
       <div className="text-center">
-        <img src={userpic} />
+        <img src={userpic} alt={"userpic"}/>
         <h3>Account: {authUser.email}</h3>
         <br/>
         <br/>

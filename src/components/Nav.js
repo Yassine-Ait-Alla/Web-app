@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import * as routes from '../constants/routes';
-import { auth } from '../firebase';
-import { connect } from 'react-redux';
 import '../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap-grid.css';
 
@@ -32,12 +29,6 @@ const PublicNav = () =>
   </nav>
 </div>
 
-const INITIAL_STATE = {
-  research: ''
-}
 
-const byPropKey = (propertyName, value) => () => ({
-  [propertyName]: value
-});
 
 export default PublicNav;

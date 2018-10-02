@@ -1,5 +1,4 @@
 import React from 'react';
-import { auth } from '../firebase';
 import withAuthorization from './withAuthorization';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
