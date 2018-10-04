@@ -1,7 +1,6 @@
 .dropdown {
      position: relative;
      display: inline-block;
-
 }
 .ulo {
      list-style-type: none;
@@ -19,6 +18,7 @@
 
  .lio {
      padding: 8px 16px;
+     margin-right: 100;
      border-bottom: 1px solid #e5e5e5;
 }
  li:last-child {

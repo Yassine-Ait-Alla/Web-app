@@ -4,4 +4,5 @@ export const LANDING = '/';
 export const HOME = '/home';
 export const ACCOUNT = '/account';
 export const PROFILES = '/profiles';
+export const UPROFILE = '/uprofile';
 export const PASSWORD_FORGET = '/passwordForget';

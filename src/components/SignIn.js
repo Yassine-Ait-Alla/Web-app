@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { PasswordForgetLink } from './PasswordForget';
 import { SignUpLink } from './SignUp';
 import { auth } from '../firebase';
-import SocialLogin from './SocialLogin';
 import * as routes from '../constants/routes';
 import './form.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -105,7 +104,6 @@ class SignInForm extends React.Component {
 
         <br/>
         <hr/>
-        <SocialLogin/>
 
       </div>
 

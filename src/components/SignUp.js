@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { auth, db } from '../firebase';
-import SocialLogin from './SocialLogin';
 import * as routes from '../constants/routes';
 import './form.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -133,7 +132,6 @@ const SignUpPage = ({ history }) =>
 
           <br/>
           <hr/>
-          <SocialLogin/>
 
         </div>
 

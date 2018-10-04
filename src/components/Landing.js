@@ -5,7 +5,7 @@ import { compose } from 'recompose';
 
 const LandingPage = ({ authUser }) =>
       <div className="text-center">
-        <h1>is it you {authUser.email}?</h1>
+        <h1>logged as {authUser.email}</h1>
       </div>
 
 const mapStateToProps = (state) => ({

@@ -42,7 +42,6 @@ showDropdownMenu(event) {
          <li className="lio"><a href="#Create Ads">Create Ads</a></li>
          <li className="lio"><a href="#Manage Ads">Manage Ads</a></li>
          <li className="lio"><a href="#Activity Logs">Activity Logs</a></li>
-         <li className="lio"><a href="#Setting">Setting</a></li>
          <li className="lio"><SignOutButton/></li>
           </ul>
         ):
