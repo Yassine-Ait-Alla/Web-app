@@ -3,6 +3,6 @@ import { auth } from '../firebase';
 
 const SignOutButton = () =>
 <button className="btn btn-dark btn-primary" type="button" onClick={auth.doSignOut}>
-              Signout</button>
+              Log Out</button>
 
 export default SignOutButton;

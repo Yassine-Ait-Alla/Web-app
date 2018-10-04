@@ -1,58 +1,60 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import * as routes from '../constants/routes';
-import { auth } from '../firebase';
-import withAuthorization from './withAuthorization';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+import SignOutButton from './SignOut';
+import './dropdown.css';
 
 
-const AccountNav = () =>
-<div className="">
-  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
+class Dropdown extends React.Component {
+constructor(){
+ super();
 
-    <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+ this.state = {
+       displayMenu: false,
+     };
 
-        <li className="nav-item active">
-          <Link className="nav-link" to={'/home'}>Home <span className="sr-only">(current)</span></Link>
-        </li>
+  this.showDropdownMenu = this.showDropdownMenu.bind(this);
+  this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
 
-        <li className="nav-item">
-          <Link className="nav-link" to={'/'}>Landing<span className="sr-only">(current)</span></Link>
-        </li>
+};
 
-        <li className="nav-item">
-          <Link className="nav-link" to={'/account'}>Account<span className="sr-only">(current)</span></Link>
-        </li>
+showDropdownMenu(event) {
+    event.preventDefault();
+    this.setState({ displayMenu: true }, () => {
+    document.addEventListener('click', this.hideDropdownMenu);
+    });
+  }
 
+  hideDropdownMenu() {
+    this.setState({ displayMenu: false }, () => {
+      document.removeEventListener('click', this.hideDropdownMenu);
+    });
 
+  }
 
+  render() {
+    return (
+        <div  className="dropdown" style = {{background:"orange",width:"200px"}} >
+         <div className="button" onClick={this.showDropdownMenu}> My Setting </div>
 
-      </ul>
-    </div>
+          { this.state.displayMenu ? (
+          <ul className="ulo">
+         <li className="lio"><a className="active" href="#Create Page">Create Page</a></li>
+         <li className="lio"><a href="#Manage Pages">Manage Pages</a></li>
+         <li className="lio"><a href="#Create Ads">Create Ads</a></li>
+         <li className="lio"><a href="#Manage Ads">Manage Ads</a></li>
+         <li className="lio"><a href="#Activity Logs">Activity Logs</a></li>
+         <li className="lio"><a href="#Setting">Setting</a></li>
+         <li className="lio"><SignOutButton/></li>
+          </ul>
+        ):
+        (
+          null
+        )
+        }
 
-  </nav>
-</div>
+       </div>
 
+    );
+  }
+}
 
-const byPropKey = (propertyName, value) => () => ({
-  [propertyName]: value
-});
-
-
-const mapStateToProps = (state) => ({
-  authUser: state.sessionState.authUser
-});
-
-const authCondition = (authUser) => !!authUser;
-
-export default compose(
-  withAuthorization(authCondition),
-  connect(mapStateToProps)
-)(AccountNav);
+export default Dropdown;

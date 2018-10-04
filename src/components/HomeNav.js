@@ -15,8 +15,8 @@ const HomeNav = () =>
 
     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
       <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+      <div><Cadran/></div>
 
-      <li><Cadran/></li>
 
         <li className="nav-item active">
           <Link className="nav-link" to={'/home'}>Home <span className="sr-only">(current)</span></Link>
@@ -28,6 +28,10 @@ const HomeNav = () =>
 
         <li className="nav-item">
           <Link className="nav-link" to={'/account'}>Account<span className="sr-only">(current)</span></Link>
+        </li>
+
+        <li className="nav-item">
+          <Link className="nav-link" to={'/profiles'}>See Users<span className="sr-only">(current)</span></Link>
         </li>
 
 

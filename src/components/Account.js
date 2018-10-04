@@ -3,19 +3,20 @@ import withAuthorization from './withAuthorization';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import userpic from './userpic.png';
+import Dropdown from './AccountNav';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
-import Mapp from './Map';
 
 
 const AccountPage = ({ authUser }) =>
   <div>
+      <div className="text-center"><Dropdown/></div>
       <div className="text-center">
+
         <img src={userpic} alt={"userpic"}/>
         <h3>Account: {authUser.email}</h3>
         <br/>
         <br/>
-        <Mapp/>
       </div>
   </div>
 
