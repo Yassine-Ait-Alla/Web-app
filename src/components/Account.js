@@ -3,7 +3,7 @@ import withAuthorization from './withAuthorization';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import userpic from './userpic.png';
-import UpdateProfileModal from './Uprofile';
+import UpdateProfileForm from './UpdateProfileForm';
 import Dropdown from './AccountNav';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -18,7 +18,7 @@ const AccountPage = ({ authUser }) =>
 
         <img src={userpic} alt={"userpic"}/>
         <h3>Account: {authUser.email}</h3>
-        <UpdateProfileModal/>
+        <UpdateProfileForm/>
 
         <br/>
         <br/>

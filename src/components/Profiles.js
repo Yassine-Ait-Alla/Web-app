@@ -3,7 +3,6 @@ import { db } from '../firebase';
 import withAuthorization from './withAuthorization';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-import Mapp from './Map';
 
 import './App.css';
 import './style.css';
@@ -24,7 +23,7 @@ class ProfilesPage extends Component {
     const { users } = this.props;
     return (
       <div  className="container">
-        <h1 className="">See Other Users</h1>
+        <h2 className="">Users</h2>
 
         { !!users && <UserList users={users} /> }
 
@@ -41,7 +40,7 @@ const UserList = ({ users }) =>
   <div  className="text-center">
 
 
-    <p  className="success-message">(Saved in firebase database)</p>
+    <h6  className="success-message">Saved in firebase database</h6>
     {Object.keys(users).map(key =>
       <div key={key}>{users[key].username}</div>
       )}
